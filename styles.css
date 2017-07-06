@@ -1,0 +1,15 @@
+button {
+    display: block;
+    width:100px;
+    height: 30px;
+}
+
+.die-div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    margin: 20px;
+    float:left;
+    color: white;
+}
+

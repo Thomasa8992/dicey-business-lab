@@ -5,11 +5,15 @@ button {
 }
 
 .die-div {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     background-color: blue;
     margin: 20px;
     float:left;
     color: white;
+    border-radius: 10px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 36px;
 }
 

@@ -1,31 +1,43 @@
-var random, 
-dieDiv,
-dieArray = [1,2,3,4,5,6],
+
+var random,
+dieArray = [], 
 genDie = document.querySelector('#Gen-die'),
 rollDice = document.querySelector('#roll-dice'),
 sum = document.querySelector('#sum');
-
 document.addEventListener('DOMContentLoaded', function(){
-    function Die(){
-        this.value = value;
-        console.log(value);
-        random =  dieArray[Math.floor(Math.random() * dieArray.length)];
-        var dieDiv = document.createElement('div');
-        dieDiv.className = 'die-div';
-        document.body.appendChild(dieDiv);
-        dieDiv.innerText= random;
-        rollDice.addEventListener(function(){
-            console.log(random);
-        });
+    var Die = function() {
+        var randomNumber = Math.floor((Math.random()*6)+1);
+        this.value = randomNumber;
+        this.dieDiv = document.createElement('div');
+        this.dieDiv.className = 'die-div';
+        document.body.appendChild(this.dieDiv); 
+        this.dieDiv.innerText = randomNumber;
+
+        
     }
-    
-    
+    Die.prototype.roll = function() {
+            this.value = Math.floor((Math.random()*6)+1); 
+            this.dieDiv.innerText = this.value;
+    }  
     genDie.addEventListener('click', function(){
         var die = new Die();
-        die;
+        dieArray.push(die);
+        console.log(dieArray);
     });
-    Die.prototype.roll = function(){
-    }
-
+    rollDice.addEventListener('click', function(){
+        for(var i = 0; i < dieArray.length; i++){
+            dieArray[i].roll();
+        }
+     });
+    Die.prototype.add = function() {
+        this.value = Math.floor((Math.random()*6)+1); 
+        this.dieDiv.innerText = this.value;
+    }  
+    sum.addEventListener('click', function(){
+        for(var i = 0; i < dieArray.length; i++){
+            dieArray[i].roll();
+        }
+    });
+   
     
 });

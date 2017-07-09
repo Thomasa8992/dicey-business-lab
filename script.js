@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function(){
     Die.prototype.removeDiv = function() {
         this.dieDiv.remove();
         dieArray.pop();
-        // console.log(dieArray);
     }  
     genDie.addEventListener('click', function(){
         var die = new Die();
